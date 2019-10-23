@@ -1,3 +1,8 @@
+import hypermedia.net.*;
+int PORT = 57222;
+String IP = "192.168.1.2";
+UDP udp;
+
 import processing.serial.*;
 import ddf.minim.*;
 import ddf.minim.spi.*;
@@ -122,4 +127,10 @@ void draw()
      }
   }
 
+}
+
+void receive(byte[] data, String PORT, int IP) {
+   String value = new String(data);
+   sensorValue = int(value);
+   println(int(value));
 }
