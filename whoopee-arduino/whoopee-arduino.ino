@@ -15,8 +15,8 @@ const int thingOn = 1;
 const int thingOff = 0;
 
 /* Put your SSID & Password */
-const char* ssid = "TanTanNEW32";  // Enter SSID here
-const char* password = "TanTanNEW32";  //Enter Password here
+const char* ssid = "tdubz";  // Enter SSID here
+const char* password = "tantantheman";  //Enter Password here
 
 /* Put IP Address details */
 IPAddress local_ip(192,168,1,1);
@@ -40,33 +40,35 @@ void loop(){
 
    // lightval = analogRead(light);
    sensorVal = digitalRead(sensorPin);
-
-     if (buttonState != lastButtonState) {
+    udp.beginPacket("192.168.1.2",60001);
+  /*   if (sensorVal != lastButtonState) {
    // Serial.print("hurr");
     // if the state has changed, increment the counter
-    if (buttonState == LOW) {
+    if (sensorVal == LOW) {
       // if the current state is HIGH then the button went from off to on:
       buttonPushCounter++;
-      Serial.print(thingOn, DEC);
-      //Serial.print("\n");
+      udp.print(thingOn, DEC);
+      Serial.println(thingOn, DEC);
     } else {
       // if the current state is LOW then the button went from on to off:
       //Serial.println("off");
-      Serial.print(thingOff, DEC);
-      //Serial.print("Hurr");
+      udp.print(thingOff, DEC);
+      Serial.println(thingOff, DEC);
     } 
    }
    else 
    {
-    Serial.print(thingOff, DEC); 
+    udp.print(thingOff, DEC); 
+    Serial.println(thingOff, DEC);
    } 
-   
-    udp.beginPacket("192.168.1.2",60001);
+   */
     //udp.printf("%i", sensorPin);
     //udp.printf("hello there!");
    // udp.endPacket();
    Serial.println(sensorVal);
    udp.print(String(sensorVal));
+  // lastButtonState = sensorVal;
+
    udp.endPacket();
   //Wait for 1 second
   delay(100);
