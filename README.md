@@ -26,7 +26,7 @@ To create the wireless whoopee cushion, the parts required were essentially a ba
 
 [proto]: https://github.com/tantantheman/tantan-whoopee/blob/master/documentation_photos/sensorprototype.jpg "Contact Sensor Prototype"
 
-The contact sensor was created by using two paper plates, electrical tape, pieces of sponge, copper tape, and aluminum foil. Foil was taped onto the inside faces of the plates, with copper tape placed over it to act as the "lead". Each plate was connected via alligator clip and wire to the ESP32, one to ground and one to Pin 4. Two pieces of sponge act as spacers to prevent unwanted contact from the foil, as well as a means for the plates to bounce back once the person has inevitably jumped out of the chair in surprise.  
+The refined contact sensor, the final whoopee cushion, was created by using two paper plates, electrical tape, pieces of sponge, copper tape, and aluminum foil. Foil was taped onto the inside faces of the plates, with copper tape placed over it to act as the "lead". Each plate was connected via alligator clip and wire to the ESP32, one to ground and one to Pin 4. Two pieces of sponge act as spacers to prevent unwanted contact from the foil, as well as a means for the plates to bounce back once the person has inevitably jumped out of the chair in surprise. Finally, the tapes are taped together to give it some tension and prevent them from separating. 
 
 ![alt text][plates]
 
@@ -41,4 +41,8 @@ The wires go into the black box that goes underneath the chair. In the box are t
 The code for the ESP32 utilizes UDP messaging, sending UDP messages over WiFi to the specified port. This is received by the Processing sketch on the other device, which will let the sketch know when the sensor is in fact pressed. Most of the code was reused after modification from the Fart-O-Matic project.
 
 **Technical Difficulties:**  
-There were several difficulties faced during the build process. Mostly, the battery and WiFi proved to be the two most unreliable portions of the project, with the sensor being relatively simple and thus less prone to breakage. 
+There were several difficulties faced during the build process. Mostly, incorporating the battery and WiFi proved to be the two most unreliable portions of the project, with the sensor being relatively simple and thus less prone to breakage.  
+
+**Video**  
+A video of the Wireless Whoopee Wonder in action can be found here:  
+https://youtu.be/ycoiD_P1CKs
