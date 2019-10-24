@@ -1,6 +1,10 @@
 # Introducing: The Wireless Whoopee Wonder, a Fart-O-Matic Accessory
 Module 3. Wireless Whoopee Cushion.
 
+![alt text][inside]
+
+[inside]: https://github.com/tantantheman/tantan-whoopee/blob/master/documentation_photos/cushionslant.jpg "Wireless Whoopee Wonder"
+
 A wireless whoopee cushion for class. Module 3, Task 2 (Installation Art).  
 Programming in both Processing and Arduino IDE.  
 
@@ -11,10 +15,19 @@ WiFiUdp.h
 Hypermedia UDP Library (Processing)  
 ddf.minim  
 
-**How to run:**
+**How to run:**  
 Attach Whoopee box on underside of desired chair, and place connected cushion device on top of chair. Make sure the battery is powering the box, and have your sound device connected to the box's wireless network. The SSID is "Whoopee" and the password is "itsfartingtime".
 
 On either a laptop with a speaker or the Fart-O-Matic, run the whoopee_processing/whoopee_processing.pde sketch while connected to the "Whoopee" wireless network. When someone sits on the cushion, a fart sound should be outputted to the sketch device. This will allow you to conceal the fart machine better, perhaps hidden whilst connected to a large speaker for maximum humor.
   
 **Implementation:**  
-To create the wireless whoopee cushion, the parts required were essentially a battery, an ESP32, and a contact sensor. The contact sensor was created by using two paper plates, electrical tape, pieces of sponge, copper tape, and aluminum foil. Foil was taped onto the inside faces of the plates, with copper tape placed over it to act as the "lead". Each plate was connected via alligator clip and wire to the ESP32, one to ground and one to Pin 4. 
+To create the wireless whoopee cushion, the parts required were essentially a battery, an ESP32, and a contact sensor. A prototype of the contact sensor was quickly made out of craft foam and foil. 
+
+The contact sensor was created by using two paper plates, electrical tape, pieces of sponge, copper tape, and aluminum foil. Foil was taped onto the inside faces of the plates, with copper tape placed over it to act as the "lead". Each plate was connected via alligator clip and wire to the ESP32, one to ground and one to Pin 4. Two pieces of sponge act as spacers to prevent unwanted contact from the foil, as well as a means for the plates to bounce back once the person has inevitably jumped out of the chair in surprise.  
+  
+The wires go into the black box that goes underneath the chair. In the box are the battery and ESP32. They remain hidden from view.  
+
+The code for the ESP32 utilizes UDP messaging, sending UDP messages over WiFi to the specified port. This is received by the Processing sketch on the other device, which will let the sketch know when the sensor is in fact pressed.   
+
+**Technical Difficulties:**  
+There were several difficulties faced during the build process. Mostly, the battery and WiFi proved to be the two most unreliable portions of the project, with the sensor being relatively simple and thus less prone to breakage. 
