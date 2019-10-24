@@ -15,8 +15,8 @@ const int thingOn = 1;
 const int thingOff = 0;
 
 /* Put your SSID & Password */
-const char* ssid = "tdubz";  // Enter SSID here
-const char* password = "tantantheman";  //Enter Password here
+const char* ssid = "Whoopee";  // Enter SSID here
+const char* password = "itsfartingtime";  //Enter Password here
 
 /* Put IP Address details */
 IPAddress local_ip(192,168,1,1);
